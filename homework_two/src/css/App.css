@@ -1,0 +1,7 @@
+.front_page{margin:0 auto; padding:5%; max-width:50%; background-color: #f0f0ef;}
+.front_page h1{font-family:serif; font-size: 40px;}
+.list_container{display: flex;}
+.list_container div.type_container ul{list-style: none;margin:0;padding: 0;}
+.list_container div.type_container ul li{font-family: serif;font-size: 24px}
+.list_container div.type_container h2{font-family: sans-serif; font-weight: 300;font-size: 14px}
+.type_container{padding:32px;}

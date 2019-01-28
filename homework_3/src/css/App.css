@@ -1,0 +1,6 @@
+.item_list{margin:0;padding:0;border:1px solid blue;}
+.file__item div.grid--expanded{margin:0;padding:0;display: flex;}
+.file__item div.grid--expanded div.grid{display: flex;}
+.file__item div.grid--expanded div.grid span{padding:11% 5%;}
+.file__item div.grid--expanded div.grid span, .file__item div.grid--expanded div.grid p{flex-shrink:0;}
+.file__button{flex-shrink: 0;width:30px;height:30px;}

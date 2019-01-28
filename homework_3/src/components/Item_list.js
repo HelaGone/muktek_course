@@ -4,10 +4,13 @@ export default class ItemList extends Component {
 	render(){
 
 		const {results} = this.props;
-		const res_arr = [];
-		Object.keys(results.results).forEach((key)=>{
-			res_arr.push(results.results[key])
-		});
+
+		// console.log(results);
+
+		// const res_arr = [];
+		// Object.keys(results.results).forEach((key)=>{
+		// 	res_arr.push(results.results[key])
+		// });
 
 		// console.log(res_arr);
 
@@ -15,7 +18,7 @@ export default class ItemList extends Component {
 			<React.Fragment>
 				<ul className="item_list">
 					{
-						res_arr.map((item)=>{
+						results.map((item)=>{
 							return <ListItem key={item.id} item={item}/>
 						})
 					}

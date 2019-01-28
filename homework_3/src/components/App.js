@@ -13,15 +13,10 @@ class App extends Component {
 	}
 
 	searchBy = (event)=>{
-		console.log(event);
-		let searched_task;
 		const query = event.target.value.toLowerCase();
-
 		const queried_file = this.state.results.filter((file)=>{
 			return file.name.toLowerCase().includes(query);
 		});
-
-		console.log(queried_file);
 
 		this.setState({
 			filtered: queried_file
@@ -30,7 +25,6 @@ class App extends Component {
 	}
 
   render() {
-    // console.log(results.results);
     return (
       <React.Fragment>
         <input type="search" name="search_todos" placeholder="buscar" onChange={this.searchBy} />

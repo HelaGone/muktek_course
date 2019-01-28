@@ -1,11 +1,18 @@
 import React, {Component} from 'react';
-import Download from './Download';
+// import Download from './Download';
+import moment from 'moment';
 
 export default class ListItem extends Component {
-	render(){
 
+	btnDownload = ()=>{
+		console.log('click');
+	}
+
+	render(){
 		const {item} = this.props;
-		// console.log(item);
+
+		// const time = moment.unix();
+		console.log(parseInt(item.added_at));
 		return(
 			<li className="file__item">
 			  <div className="grid grid--expanded">
@@ -15,11 +22,14 @@ export default class ListItem extends Component {
 			      </span>
 			      <p className="file__meta">
 			        <span className="file__name">{item.name}</span> <br />
-			        <span>Added {item.added_at} · {item.category}</span>
+			        <span>Added { moment.unix(parseInt(item.added_at)).fromNow() } · {item.category}</span>
 			      </p>
 			    </div>
 
-			    <Download />
+			    <button className="file__button" onClick={this.btnDownload}>
+			    	<i className="fa fa-download"></i>
+			    </button>
+
 			  </div>
 			</li>
 		);

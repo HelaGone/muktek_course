@@ -5,15 +5,6 @@ export default class ItemList extends Component {
 
 		const {results} = this.props;
 
-		// console.log(results);
-
-		// const res_arr = [];
-		// Object.keys(results.results).forEach((key)=>{
-		// 	res_arr.push(results.results[key])
-		// });
-
-		// console.log(res_arr);
-
 		return(
 			<React.Fragment>
 				<ul className="item_list">

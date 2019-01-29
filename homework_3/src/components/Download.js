@@ -2,10 +2,9 @@ import React, {Component} from 'react';
 
 export default class Download extends Component{
 	render(){
+		const {fsize} = this.props
 		return(
-			<button className="file__button">
-			  <i className="fa fa-download"></i>
-			</button>
+			<p className="file_size">{`${fsize}Kb`}</p>
 		);
 	}
 }

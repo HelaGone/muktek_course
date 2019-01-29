@@ -7,7 +7,7 @@ export default class ItemList extends Component {
 
 		return(
 			<React.Fragment>
-				<ul className="item_list">
+				<ul className="item_list inner_elem" >
 					{
 						results.map((item)=>{
 							return <ListItem key={item.id} item={item}/>

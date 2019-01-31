@@ -4,15 +4,13 @@ import moment from 'moment';
 
 export default class ListItem extends Component {
 
-	btnDownload = ()=>{
-		console.log('click');
+	btnDownload = (event)=>{
+		console.log(this.props.item.size);
 	}
 
 	render(){
 		const {item} = this.props;
 
-		// const time = moment.unix();
-		console.log(parseInt(item.added_at));
 		return(
 			<li className="file__item">
 			  <div className="grid grid--expanded">
@@ -26,7 +24,7 @@ export default class ListItem extends Component {
 			      </p>
 			    </div>
 
-			    <button className="file__button" onClick={this.btnDownload}>
+			    <button className="file__button" onClick={this.btnDownload} data-fsize={item.size}>
 			    	<i className="fa fa-download"></i>
 			    </button>
 

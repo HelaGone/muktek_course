@@ -1,6 +1,10 @@
-.item_list{margin:0;padding:0;border:1px solid blue;}
+.item_list{margin:0;padding:0;width:100%;}
 .file__item div.grid--expanded{margin:0;padding:0;display: flex;}
-.file__item div.grid--expanded div.grid{display: flex;}
-.file__item div.grid--expanded div.grid span{padding:11% 5%;}
+.file__item div.grid--expanded div.grid{display: flex;width:100%;}
+.file__item div.grid--expanded div.grid span{padding:4%;}
 .file__item div.grid--expanded div.grid span, .file__item div.grid--expanded div.grid p{flex-shrink:0;}
-.file__button{flex-shrink: 0;width:30px;height:30px;}
+.file__button{flex-shrink: 0;width:30px;height:30px;position: relative;top:15px;}
+
+.main_container{border:1px dotted black;display: flex;}
+.main_container .sides{flex-shrink: 0;width:50%;}
+.main_container .sides.sidebar{border-left:1px dotted green;}

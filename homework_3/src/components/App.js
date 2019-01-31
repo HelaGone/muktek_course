@@ -27,8 +27,15 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <input type="search" name="search_todos" placeholder="buscar" onChange={this.searchBy} />
-        <ItemList results={this.state.filtered} />
+      	<div className="main_container">
+	      	<div className="sides" >
+	        	<input type="search" name="search_todos" placeholder="buscar" onChange={this.searchBy} />
+	        	<ItemList results={this.state.filtered} />
+	        </div>
+	        <div className="sides sidebar" >
+	        	<h2>Compress</h2>
+	        </div>
+        </div>
       </React.Fragment>
     );
   }

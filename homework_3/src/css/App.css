@@ -7,3 +7,4 @@
 .main_container{display: flex;}
 .main_container .inner_elem{flex-shrink: 0;}
 .main_container .sidebar{width:30%;}
+

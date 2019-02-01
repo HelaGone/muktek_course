@@ -2,32 +2,21 @@ import React, { Component, Fragment } from 'react';
 import TaskList from './TaskList';
 
 export default class ContentList extends Component{
-	constructor(props){
-		super(props);
-		this.state= {
-			date: ""
-		}
-	}
-
-	getDate(){
-		const date = new Date().toLocaleString();
-		this.setState({
-			date: date
-		});
-	}
-
-	componentDidMount(){
-		this.getDate();
-	}
 	
 	render(){
-
+		const {date, methods, tasks} = this.props
 		return(
 			<Fragment>
 				<div className="main_content sides">
+
+					<form onSubmit={methods.formSubmit}>
+						<input name="mynewtask" type="text" /> 
+						<button type="submit" onClick={methods.btnClick}>Save</button>
+					</form>
+
 					<h1>TODAY</h1>
-					<p>{this.state.date}</p>
-					<TaskList />
+					<p>{date}</p>
+					<TaskList taskItem={tasks} isChecked={methods.checked} />
 				</div>
 			</Fragment>
 		);

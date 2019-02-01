@@ -5,11 +5,12 @@ import Search from './Search';
 export default class Sidebar extends Component{
 
 	render(){
+		const {sidebarMethods} = this.props
 		return(
 			<Fragment>
 				<div className="sidebar sides">
 					<Search />
-					<Filters />
+					<Filters filterMethods={sidebarMethods} />
 				</div>
 			</Fragment>
 		);

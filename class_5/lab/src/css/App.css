@@ -1,0 +1,6 @@
+.main_wrapper{border:1px dotted grey;display: flex;}
+.main_wrapper .sides{border:1px dotted blue;}
+
+.main_content{width:70%;}
+.sidebar{width:30%;}
+.sidebar_btn{width:25%;height:40px;border-style:none;background-color:transparent;padding:8px;text-align: left;cursor:pointer;}

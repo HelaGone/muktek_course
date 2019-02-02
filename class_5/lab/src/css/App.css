@@ -7,3 +7,6 @@ h1, h2, h3, h4, h5, h6{margin:0;}
 .sidebar_btn{width:25%;height:40px;border-style:none;background-color:transparent;padding:8px;text-align: left;cursor:pointer;}
 .task_item{display: flex;}
 .task_item .task_name{margin-left:16px;}
+
+.show_form{visibility:visible;}
+.hide_form{visibility:hidden;}

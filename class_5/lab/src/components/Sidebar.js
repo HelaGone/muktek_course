@@ -9,7 +9,7 @@ export default class Sidebar extends Component{
 		return(
 			<Fragment>
 				<div className="sidebar sides">
-					<Search />
+					<Search searchMethod={sidebarMethods.search}/>
 					<Filters filterMethods={sidebarMethods} />
 				</div>
 			</Fragment>

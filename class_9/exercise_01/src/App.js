@@ -18,7 +18,7 @@ class App extends Component {
       },
       currentImgSrc: '',
       currentWine: [],
-      selected: false,
+      selected: '',
       showImg: false
     }
   }
@@ -35,14 +35,16 @@ class App extends Component {
     .catch(err=>console.error(err));
   }
 
-  handleClick=(region, id)=>{
-    const wines_byRegion_url = `https://wines-api.herokuapp.com/api/wines?region=${region}`
+  handleClick=(event)=>{
+    const target = event.target;
+    const value = target.innerHTML;
+    const wines_byRegion_url = `https://wines-api.herokuapp.com/api/wines?region=${value}`;
     fetch(wines_byRegion_url)
     .then(response=>response.json())
     .then(data=>{
       this.setState({
         wines: data,
-
+        selected: value
       });
     })
     .catch(err=>console.error(err))
@@ -66,14 +68,14 @@ class App extends Component {
   }
 
   render() {
-    const {regions, methods, clicked, wines, currentWine, currentImgSrc} = this.state;
+    const {regions, methods, wines, currentWine, currentImgSrc} = this.state;
     return (
       <Fragment>
         <div className="App">
           <Header />
         </div>
         <div className="wine_container">
-          <RegionList regions={regions} methods={methods} isClicked={clicked} />
+          <RegionList regions={regions} methods={methods} />
           <WineList wines={wines} methods={methods} />
           <Detail currentWine={currentWine} currentImgSrc={currentImgSrc} showImg={this.state.showImg}/>
         </div>

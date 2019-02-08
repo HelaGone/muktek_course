@@ -8,7 +8,7 @@ export default class RegionList extends Component{
 				<h2>Regions</h2>
 				<ul className="region_list">
 					{
-						regions.map((region, i)=><li key={i} className="list_item" onClick={()=>methods.handleClick(region, i)}>{region}</li>)
+						regions.map((region, i)=><li key={i} className="list_item" onClick={methods.handleClick}>{region}</li>)
 					}
 				</ul>
 			</div>

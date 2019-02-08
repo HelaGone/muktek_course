@@ -18,7 +18,7 @@ class App extends Component {
       },
       currentImgSrc: '',
       currentWine: [],
-      clicked: false,
+      selected: false,
       showImg: false
     }
   }
@@ -35,30 +35,25 @@ class App extends Component {
     .catch(err=>console.error(err));
   }
 
-  handleClick=(event)=>{
-    const target = event.target;
-    const value = target.innerHTML;
-    const wines_byRegion_url = `https://wines-api.herokuapp.com/api/wines?region=${value}`
+  handleClick=(region, id)=>{
+    const wines_byRegion_url = `https://wines-api.herokuapp.com/api/wines?region=${region}`
     fetch(wines_byRegion_url)
     .then(response=>response.json())
     .then(data=>{
       this.setState({
-        wines: data
+        wines: data,
+
       });
     })
     .catch(err=>console.error(err))
   }
 
   handleClickDetail=(wineId)=>{
-
     const {wines} = this.state;
-
     const the_wine = wines.filter(wine=>wine.id === wineId);
-
     this.setState({
       currentWine: the_wine[0]
     });
-
     const image_by_id_url = `https://wines-api.herokuapp.com/api/wines/${wineId}/image`;
     fetch(image_by_id_url)
     .then(response=>{
@@ -68,7 +63,6 @@ class App extends Component {
       })
     })
     .catch(err=>console.error(err));
-
   }
 
   render() {

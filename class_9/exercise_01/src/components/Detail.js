@@ -13,26 +13,31 @@ export default class Detail extends Component{
 		return(
 			<Fragment>
 				<figure className="item_figure list">
-					{
-						showImg && <img src={currentImgSrc} alt="Wine 1"/>
-					}
-					<figcaption>
-						<h2>{currentWine.name}</h2>
-						<ul>
-							<li>
-								<strong>Appellation:</strong>{appellName}
-							</li>
-							<li>
-								<strong>Region:</strong>{region}
-							</li>
-							<li>
-								<strong>Color:</strong>{currentWine.type}
-							</li>
-							<li>
-								<strong>Grapes:</strong>{grapes}
-							</li>
-						</ul>
-					</figcaption>
+				<h2>Wine Details</h2>
+				{
+					showImg && (
+						<div>
+							<img src={currentImgSrc} alt="Wine 1"/>
+							<figcaption>
+								<h2>{currentWine.name}</h2>
+								<ul>
+									<li>
+										<p><strong>Appellation:</strong>{appellName}</p>
+									</li>
+									<li>
+										<p><strong>Region:</strong>{region}</p>
+									</li>
+									<li>
+										<p><strong>Color:</strong>{currentWine.type}</p>
+									</li>
+									<li>
+										<p><strong>Grapes:</strong>{grapes}</p>
+									</li>
+								</ul>
+							</figcaption>
+						</div>
+						)
+				}
 				</figure>
 			</Fragment>
 		);

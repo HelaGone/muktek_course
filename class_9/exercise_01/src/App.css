@@ -14,11 +14,11 @@ ul{list-style: none;}
   font-size: calc(10px + 2vmin);
   color: #424242;
 }
-.list{margin:8px;min-width:calc(100% / 3);}
-
+.list{min-width:calc(80% / 3); max-width:calc(80% / 3); }
 .wine_container{width:80%;margin:0 auto;display: flex;justify-content: space-between;}
 .list_item{color:#33cccc;cursor: pointer;border:1px solid grey;border-bottom:none;padding:8px;}
 .list_item:hover{background-color: rgba(0,0,0,0.05)}
 .list_item:last-child{border-bottom: 1px solid grey}
 .item_figure{flex-shrink: 0;min-width: calc(100% / 3);box-shadow: 1px 2px 5px rgba(0,0,0,0.3);border:1px solid rgba(0,0,0,0.03);padding:16px;}
+.item_figure h2, .item_figure p{word-break: break-word;margin:4px 0;}
 .selected{color:white;background-color:#33cccc;}

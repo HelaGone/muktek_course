@@ -1,0 +1,24 @@
+
+ul, li, figure{margin:0;padding:0;}
+ul{list-style: none;}
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #424242;
+}
+.list{margin:8px;min-width:calc(100% / 3);}
+
+.wine_container{width:80%;margin:0 auto;display: flex;justify-content: space-between;}
+.list_item{color:#33cccc;cursor: pointer;border:1px solid grey;border-bottom:none;padding:8px;}
+.list_item:hover{background-color: rgba(0,0,0,0.05)}
+.list_item:last-child{border-bottom: 1px solid grey}
+.item_figure{flex-shrink: 0;min-width: calc(100% / 3);box-shadow: 1px 2px 5px rgba(0,0,0,0.3);border:1px solid rgba(0,0,0,0.03);padding:16px;}
+.selected{color:white;background-color:#33cccc;}

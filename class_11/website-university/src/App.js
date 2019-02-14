@@ -58,17 +58,6 @@ class App extends Component {
     }).catch(err=>console.error(err));
   }//End Fetch by class
 
-  fetchStudentDetail = (studentId)=>{
-    const data_url = `http://localhost:3000/students/${studentId}`;
-    fetch(data_url)
-    .then(response=>response.json())
-    .then(data=>{
-      this.setState({
-        currentStudent: data
-      })
-    }).catch(err=>console.error(err));
-  }
-
 
   render() {
     const {students, classes, methods, currentStudent} = this.state;

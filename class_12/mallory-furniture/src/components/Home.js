@@ -2,19 +2,16 @@ import React, {Component, Fragment} from 'react';
 import Cover from '../images/interior-design.jpg';
 import Item from './Item';
 import Catbtn from './Catbtn';
+import {Link} from 'react-router-dom';
 
 export default class Home extends Component{
 	render(){
-		const {allproducts, methods, showall, categories, currentCat} = this.props
-		let the_prod = [];
+		const {allproducts, methods, categories, } = this.props
+		let featured = [];
 		const {handleClickCat} = methods;
 
 		if(allproducts!==undefined){
-			if(currentCat===''){
-				the_prod = showall ? allproducts : allproducts.filter(product=>product.featured===true);
-			}else{
-				the_prod = allproducts.filter(product=>product.category===currentCat);
-			}
+			featured = allproducts.filter(product=>product.featured===true);
 		}
 
 		return(
@@ -32,12 +29,12 @@ export default class Home extends Component{
 					<p>Check out some of our favlurite listing</p>
 					<ul className="item_pool">
 					{
-						the_prod.map(product=><Item key={product._id} product={product}/>)
+						featured.map(product=><Item key={product._id} product={product}/>)
 					}
 					</ul>
 
 					<div className="show_all_container">
-						<button onClick={methods.handleClick} className="show_all">All Products</button>
+						<Link to="/all" className="show_all">All Products</Link>
 					</div>
 				</section>
 

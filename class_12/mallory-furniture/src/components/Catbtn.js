@@ -1,10 +1,11 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 export default class Catbtn extends Component{
 	render(){
-		const {category, handleClick} = this.props;
+		const {category} = this.props;
 		return(
-			<button onClick={handleClick}  value={category} >{category}</button>
+			<Link to={`category/${category}`} className="">{category}</Link>
 		);
 	}
 }

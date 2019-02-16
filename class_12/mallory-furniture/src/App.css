@@ -22,5 +22,5 @@ button{cursor: pointer;border-radius: 5px;}
 .show_all:hover{color:#FF4500;box-shadow: 1px 1px 1px rgba(0,0,0,0.5);}
 
 .cat_btn_container{width:40%;margin:0 auto;display: flex;flex-wrap: wrap;flex-direction: row;}
-.cat_btn_container button{border-style: none;border:1px solid #2196f3; padding:24px; background-color: white; color:#2196f3;width:120px;margin:16px;box-shadow: 1px 2px 4px rgba(0,0,0,0.5);}
-.cat_btn_container button:hover{box-shadow: 1px 1px 1px rgba(0,0,0,0.5);}
+.cat_btn_container a{border-style: none;border:1px solid #2196f3; padding:24px; background-color: white; color:#2196f3;width:120px;margin:16px;box-shadow: 1px 2px 4px rgba(0,0,0,0.5);}
+.cat_btn_container a:hover{box-shadow: 1px 1px 1px rgba(0,0,0,0.5);}

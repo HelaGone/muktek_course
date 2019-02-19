@@ -1,9 +1,11 @@
 import React, {Component, Fragment} from 'react';
 import {Link} from 'react-router-dom';
+import Cart from './ShoppingCart';
+import cart_icon from '../images/baseline_shopping_cart_white_18dp.png';
 
 export default class Header extends Component{
 	render(){
-		const {categories} = this.props;
+		const {categories, inCart} = this.props;
 		return(
 			<Fragment>
 				<header id="main_header">
@@ -18,9 +20,13 @@ export default class Header extends Component{
 									return <li key={category}><Link to={`/category/${category}`}>{category}</Link></li>
 								})
 							}
+							<li className="nav_item" onClick={()=>document.getElementById('toggle_cart').style.width = '20vw'}>
+								<img src={cart_icon} alt="Shopping Cart"/>
+							</li>
 						</ul>
 					</nav>
-				</header>	
+				</header>
+				<Cart inCart={inCart}/>
 			</Fragment>
 		);
 	}

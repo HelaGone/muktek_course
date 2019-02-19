@@ -7,6 +7,7 @@ import About from './components/About';
 import Terms from './components/Terms';
 import All from './components/All-products';
 import Category from './components/Category';
+import Product from './components/Product';
 import NotFound from './components/NotFound';
 
 class App extends Component {
@@ -16,10 +17,12 @@ class App extends Component {
       allproducts: [],
       categories: [],
       onSale: [],
+      inCart: [],
       methods: {
         handleClick: this.handleClick,
         handleClickCat: this.handleClickCat,
-        handleClickOnSale: this.handleClickOnSale
+        handleClickOnSale: this.handleClickOnSale,
+        handleAddToCart: this.handleAddToCart
       },
       currentCat: '',
       showAll: false,
@@ -57,25 +60,29 @@ class App extends Component {
   handleClickCat = (event)=>{
     const target = event.target;
     const value = target.value;
-
     this.setState({
       currentCat: value,
-      // showall:false,
     });
+  }
 
+  handleAddToCart = (product) =>{
+    this.setState({
+      inCart: [...this.state.inCart, product]
+    });
   }
 
   render() {
-    const {allproducts, methods, categories, isOnSale} = this.state;
+    const {allproducts, methods, categories, isOnSale, inCart} = this.state;
     return (
       <Fragment>
-        <Header categories={categories} />
+        <Header categories={categories} inCart={inCart}/>
         <Switch>
-          <Route path="/" exact render={(props)=><Home allproducts={allproducts} categories={categories} methods={methods} {...props} />} />
+          <Route path="/" exact render={(props)=><Home allproducts={allproducts} categories={categories} methods={methods} {...props} /> } />
           <Route path="/about" exact component={About} />
           <Route path="/terms-conditions" exact component={Terms} />
           <Route path="/all" exact render={(props)=><All allproducts={allproducts} isOnSale={isOnSale} methods={methods} {...props} /> } />
-          <Route path="/category/:category" render={(props=><Category allproducts={allproducts} methods={methods} isOnSale={isOnSale} {...props}/>)} />
+          <Route path="/category/:category" render={(props)=><Category allproducts={allproducts} methods={methods} isOnSale={isOnSale} {...props} /> } />
+          <Route path="/product/:product_id" render={(props)=><Product allproducts={allproducts} methods={methods} {...props} /> } />
           <Route component={NotFound}/>
         </Switch>
       </Fragment>

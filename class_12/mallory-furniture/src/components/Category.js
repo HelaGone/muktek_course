@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import Item from './Item';
+import {Link} from 'react-router-dom';
 
 export default class Category extends Component{
 	render(){
@@ -20,7 +21,7 @@ export default class Category extends Component{
 					<div>
 						<ul className="item_pool">
 						{
-							display_products.map(product=><Item key={product._id} product={product}/>)
+							display_products.map(product=><Link to={`/product/${product._id}`} key={product._id}><Item  product={product}/></Link>)
 						}
 						</ul>
 					</div>

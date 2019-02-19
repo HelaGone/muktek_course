@@ -29,7 +29,7 @@ export default class Home extends Component{
 					<p>Check out some of our favlurite listing</p>
 					<ul className="item_pool">
 					{
-						featured.map(product=><Item key={product._id} product={product}/>)
+						featured.map(product=><Link key={product._id} to={`/product/${product._id}`}><Item product={product}/></Link>)
 					}
 					</ul>
 
